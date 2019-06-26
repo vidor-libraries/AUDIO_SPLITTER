@@ -1,0 +1,34 @@
+{
+  "module":{
+    "name":"audio_splitter",
+    "version":"1.0",
+    "className":"AudioSplitter",
+    "instanceName":"AudioSplitter",
+    "description":"Audio Splitter",
+    "author":"",
+    "parameters":[
+      {"name":"CHANNELS", "min":"2", "max":"8", "inc":"1", "def":"2"}
+    ]
+  },
+  "hw":[
+    {
+      "interface":"avalon_slave",
+      "name":"avalon_slave",
+      "parameters":[
+        {"signal":"address", "name":"SPAN", "value":"3"},
+        {"signal":"read_data", "name":"BIT_WIDTH", "value":"32"},
+        {"signal":"write_data", "name":"BIT_WIDTH", "value":"32"}
+      ]
+    },
+    {
+      "interface":"audio_dst",
+      "name":"audio_dst",
+      "type":"stream"
+    },
+    {
+      "interface":"audio_src",
+      "name":"audio_src",
+      "type":"stream"
+    }
+  ]
+}
